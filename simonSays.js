@@ -43,7 +43,9 @@ function checkAns(idx){
   
    if(userseq[idx]=== gameseq[idx]){
      if(userseq.length == gameseq.length){
-     setTimeout(levelup,1000)
+     setTimeout(()=>{
+          levelup();
+     },1000);
      }
    }else{
       h4.innerText=`game over:${level},press any key to start`;
@@ -71,6 +73,7 @@ for(buttns of btnns){
 function reset(){
    started=false;
     userseq=[];
+     gameseq=[];
     started =false;
  level=0;
 }
